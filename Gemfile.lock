@@ -43,6 +43,8 @@ GEM
     addressable (2.4.0)
     arel (7.0.0)
     bcrypt (3.1.10)
+    bower-rails (0.10.0)
+    bson (4.0.1)
     builder (3.2.2)
     byebug (8.2.2)
     capybara (2.6.2)
@@ -52,6 +54,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    coderay (1.1.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -79,13 +82,49 @@ GEM
     cucumber-wire (0.0.1)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
+    durran-validatable (2.0.1)
     erubis (2.7.0)
+    ethon (0.8.1)
+      ffi (>= 1.3.0)
     execjs (2.6.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.6.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.10.0)
+      faraday (>= 0.7.4, < 0.10)
+    ffi (1.9.10)
+    geocoder (1.3.0)
     gherkin (3.2.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    google-api-client (0.9.1)
+      activesupport (>= 3.2)
+      addressable (~> 2.3)
+      googleauth (~> 0.5)
+      httpclient (~> 2.7)
+      hurley (~> 0.1)
+      memoist (~> 0.11)
+      mime-types (>= 1.6)
+      multi_json (~> 1.11)
+      representable (~> 2.3.0)
+      retriable (~> 2.0)
+      thor (~> 0.19)
+    googleauth (0.5.1)
+      faraday (~> 0.9)
+      jwt (~> 1.4)
+      logging (~> 2.0)
+      memoist (~> 0.12)
+      multi_json (~> 1.11)
+      os (~> 0.9)
+      signet (~> 0.7)
+    httpclient (2.7.1)
+    hurley (0.2)
     i18n (0.7.0)
-    jbuilder (2.4.0)
+    jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
     jquery-rails (4.1.0)
@@ -93,20 +132,46 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    jwt (1.5.2)
+    koala (2.2.0)
+      addressable
+      faraday
+      multi_json
+    leshill-will_paginate (2.3.11)
+    little-plugger (1.1.4)
+    logging (2.0.0)
+      little-plugger (~> 1.1)
+      multi_json (~> 1.10)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    memoist (0.14.0)
     method_source (0.8.2)
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    mongo (2.2.2)
+      bson (~> 4.0)
+    mongoid (1.0.6)
+      activesupport (>= 2.2.2)
+      durran-validatable (>= 2.0.1)
+      leshill-will_paginate (>= 2.3.11)
+      mongo (>= 0.18.2)
     multi_json (1.11.2)
     multi_test (0.1.2)
+    multipart-post (2.0.0)
     nio4r (1.2.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    os (0.9.6)
     pg (0.18.4)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     puma (2.16.0)
     rack (2.0.0.alpha)
       json
@@ -132,6 +197,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.4)
     railties (5.0.0.beta2)
       actionpack (= 5.0.0.beta2)
       activesupport (= 5.0.0.beta2)
@@ -139,7 +209,12 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.5.0)
+    rdoc (4.2.2)
+      json (~> 1.4)
     redis (3.2.2)
+    representable (2.3.0)
+      uber (~> 0.0.7)
+    retriable (2.1.0)
     rspec-core (3.1.7)
       rspec-support (~> 3.1.0)
     rspec-expectations (3.1.2)
@@ -163,6 +238,17 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sdoc (0.4.1)
+      json (~> 1.7, >= 1.7.7)
+      rdoc (~> 4.0)
+    shoulda-matchers (3.1.1)
+      activesupport (>= 4.0.0)
+    signet (0.7.2)
+      addressable (~> 2.3)
+      faraday (~> 0.9)
+      jwt (~> 1.5)
+      multi_json (~> 1.10)
+    simple_oauth (0.3.1)
     slim (3.0.6)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -172,7 +258,10 @@ GEM
       activesupport (>= 3.1, < 5.0)
       railties (>= 3.1, < 5.0)
       slim (~> 3.0)
+    slop (3.6.0)
     spring (1.6.3)
+    spring-commands-rspec (1.0.4)
+      spring (>= 0.9.1)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -186,8 +275,11 @@ GEM
     tilt (2.0.2)
     turbolinks (2.5.3)
       coffee-rails
+    typhoeus (1.0.1)
+      ethon (>= 0.8.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uber (0.0.15)
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -200,28 +292,46 @@ GEM
     websocket-extensions (0.1.2)
     xpath (2.0.0)
       nokogiri (~> 1.3)
+    yelp (2.1.1)
+      faraday (~> 0.8, >= 0.8.0)
+      faraday_middleware (~> 0.8, >= 0.8.0)
+      simple_oauth (~> 0.3.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   bcrypt
+  bower-rails
   byebug
+  capybara
   coffee-rails
   cucumber-rails
+  factory_girl_rails
+  geocoder
+  google-api-client
   jbuilder
   jquery-rails
+  koala
+  mongoid
   pg
+  pry-rails
   puma
   rails (>= 5.0.0.beta2)
+  rails_12factor
   redis
   rspec-rails
   sass-rails
+  sdoc
+  shoulda-matchers
   slim-rails
   spring
+  spring-commands-rspec
   turbolinks
+  typhoeus
   uglifier
   web-console
+  yelp
 
 BUNDLED WITH
    1.11.2

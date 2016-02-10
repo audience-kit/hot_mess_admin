@@ -1,24 +1,47 @@
-## README
+# Hot Mess
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the Hot Mess web application and API server.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+* Ruby Version 2.1 or higher
+* Bundler
+* MongoDB server
+* Redis server
+* Unix/POSIX like environment.  Tested with Arch Linux and Mac OS 10.10
 
-* System dependencies
+## Vagrant
 
-* Configuration
+The application supports running development code inside of a Vagrant virtual machine.  The default provisioner is VirtualBox, so install it from Oracle before running vagrant.
 
-* Database creation
+The development fabric can be started with: `vagrant up`
 
-* Database initialization
+The development server can be started with: `vagrant exec rails server`
 
-* How to run the test suite
+## Testing
 
-* Services (job queues, cache servers, search engines, etc.)
+Tests are created in RSpec and exist in `spec`.  Specs can be run by issuing the command `bundle exec rake spec`
 
-* Deployment instructions
+## Database
 
-* ...
+### MongoDB
+
+MongoDB is used as the primary data storage for the application.
+
+The database can be created with `bundle exec rake db:migrate`
+
+### Redis
+
+Redis is used as a backing store for background job execution.
+
+Jobs that can be run exist in `app/jobs`
+
+## Configuration
+
+### Facebook API
+
+The Facebook API connections are handled in <code>config/secrets.yml</code>
+
+### Sound Cloud API
+
+The SoundCloud API connections are handled in `config/secrets.yml` under `soundcloud`

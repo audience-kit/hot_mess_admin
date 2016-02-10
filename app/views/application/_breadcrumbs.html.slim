@@ -1,0 +1,6 @@
+ol#breadcrumbs
+  - breadcrumbs.each do |crumb|
+    - crumb.active?
+      li.active= crumb.text
+    else
+      li: a href=crumb.location = crumb.text

@@ -1,0 +1,31 @@
+- title "Venue: #{@venue.display_name}"
+
+.panel.panel-default
+  .panel-heading
+    strong Venue
+
+
+.panel.panel-default
+  .panel-heading
+    strong Events
+
+    ul.options.pull-right.list-unstyled.relative
+      li: a.btn.btn-primary.btn-xs href=new_venue_event_path(@venue)
+        i.fa.fa-plus
+        | Add
+
+  .panel-body.nopadding
+    table.table
+      thead
+        tr
+          th Id
+          th Display Name
+      tbody
+        - if @venue.events.any?
+          - @venue.events.each do |event|
+            tr
+              td= link_to event.id, event
+              td= link_to event.display_name, event
+        - else
+          tr
+            td colspan="2" No Events

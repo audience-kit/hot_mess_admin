@@ -204,7 +204,7 @@ body.min #middle {
 /**	Plugins Rewrite
 *************************************************** **/
 	/* 
-		OWL Slider [essentials.css]
+		OWL Slider [essentials.scss]
 	*/
 	.owl-theme.controlls-over .owl-controls .owl-page:first-child {
 		-webkit-border-top-left-radius: 0;
@@ -264,7 +264,7 @@ body.min #middle {
 	}
 	
 	
-/**	Ribbon [essentials.css]
+/**	Ribbon [essentials.scss]
 *************************************************** **/
 .ribbon {
 	right: auto;
@@ -288,7 +288,7 @@ body.min #middle {
 
 
 
-/**	Tag Cloud [essentials.css]
+/**	Tag Cloud [essentials.scss]
 *************************************************** **/
 .tag {
 	margin: 0 0 3px 6px;
@@ -296,7 +296,7 @@ body.min #middle {
 
 
 
-/**	Side Nav [essentials.css]
+/**	Side Nav [essentials.scss]
 *************************************************** **/
 div.side-nav ul>li>a.dropdown-toggle:before {
 	right:auto;
@@ -322,7 +322,7 @@ ul.side-nav li.list-toggle:after {
 }
 
 
-/**	Forms [essentials.css]
+/**	Forms [essentials.scss]
 *************************************************** **/
 .radio i, 
 .checkbox i {
@@ -604,7 +604,7 @@ div.owl-carousel.owl-mini-testimonial .owl-controls {
 }
 
 
-/**	[essentials.css] Sky Form
+/**	[essentials.scss] Sky Form
 **************************************************************** **/
 .sky-form .ico-append {
 	right: auto;

@@ -1,0 +1,27 @@
+= form_for @locale do |f|
+  .panel.panel-default
+    .panel-heading
+      - if @locale.id
+        strong Edit Locale
+      - else
+        strong New Locale
+
+    .panel-body
+      .fancy-form
+        = f.label :name
+        = f.text_field :name, class: 'form-control'
+        br
+        = f.label :display_name
+        = f.text_field :display_name, class: 'form-control'
+        br
+        = f.label :google_place_id
+        = f.text_field :google_place_id, class: 'form-control'
+        br
+        = f.label :facebook_location_id
+        = f.text_field :facebook_location_id, class: 'form-control'
+
+    .panel-footer
+      .pull-right
+        a.btn.btn-danger.margin-right-6 href=locales_path Cancel
+        = f.submit 'Create', class: %w(btn btn-primary)
+      .clearfix

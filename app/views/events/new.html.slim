@@ -1,0 +1,20 @@
+- title "#{@venue.display_name}: New Event"
+
+= form_for @event do |f|
+  .panel.panel-default
+    .panel-heading
+      strong Create New Event
+
+    .panel-body
+      .fancy-form
+        = f.hidden_field :venue_id
+        = f.label :name
+        = f.text_field :name, class: 'form-control'
+        br
+        = f.label :display_name
+        = f.text_field :display_name, class: 'form-control'
+
+    .panel-footer
+      .pull-right
+        = f.submit 'Save', class: %w(btn btn-primary)
+      .clearfix

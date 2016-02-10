@@ -1,0 +1,53 @@
+doctype 5
+html lang="en-US"
+  head
+    title Hot Mess Administration
+
+    meta charset="utf-8"
+    meta http-equiv="Content-type" content="text/html; charset=utf-8"
+    meta name="description" content=""
+    meta name="Author" content="Rick Mark [rickmark.me]"
+
+    = csrf_meta_tags
+    = action_cable_meta_tag
+
+    /! WEB FONTS
+    link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css"
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+  body
+    #wrapper
+      == render partial: 'navigation'
+
+      header#header
+        button#mobileMenuBtn
+
+        span.logo.pull-left
+          .text-white.margin-top-3 Hot Mess Administration
+
+
+
+        nav
+          ul.pull-right.nav
+            li.dropdown.pull-left
+              a.dropdown-toggle
+                = image_tag 'noavatar.jpg', height: 34, class: 'user-avatar'
+                span.user-name
+                  span.hidden-xs
+                    | Rick Mark
+                    i.fa.fa-angle-down
+              ul.dropdown-menu.hold-on-click
+
+
+
+
+      section#middle
+
+        header#page-header
+          h1= content_for :title
+          = render partial: 'breadcrumbs'
+
+        #content.padding-20
+          == yield

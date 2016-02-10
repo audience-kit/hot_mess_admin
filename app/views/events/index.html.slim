@@ -1,0 +1,28 @@
+- title 'Event Listing'
+
+.panel.panel-default
+  .panel-heading
+    strong Events
+
+    ul.options.pull-right.list-unstyled.relative
+      li: a.btn.btn-primary.btn-xs href=new_event_path
+        i.fa.fa-plus
+        | Add
+
+  .panel-body.nopadding
+    table.table
+      thead
+        tr
+          th Id
+          th Name
+          th Display Name
+      tbody
+        - if @events.any?
+          - @events.each do |event|
+            tr
+              td= link_to event.id, event
+              td= link_to event.name, event
+              td= link_to event.display_name, event
+        - else
+          tr colspan="3"
+            td No events

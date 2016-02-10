@@ -1,4 +1,5 @@
 
+
 	window.width = jQuery(window).width();
 
 	jQuery(window).ready(function() {
