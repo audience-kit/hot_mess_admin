@@ -15,38 +15,49 @@ ActiveRecord::Schema.define(version: 20160210111558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
-  create_table "events", force: :cascade do |t|
-    t.string  "name"
-    t.string  "display_name"
-    t.integer "venue_id"
+  create_table "events", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "name",         null: false
+    t.string   "display_name", null: false
+    t.uuid     "venue_id"
+    t.index ["venue_id"], name: "index_events_on_venue_id", using: :btree
   end
 
-  create_table "locales", force: :cascade do |t|
+  create_table "locales", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "name",                 null: false
     t.string   "display_name",         null: false
     t.string   "google_place_id"
     t.string   "facebook_location_id"
+    t.index ["name"], name: "index_locales_on_name", using: :btree
   end
 
-  create_table "users", force: :cascade do |t|
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "display_name"
+  create_table "users", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "first_name",                             null: false
+    t.string   "last_name",                              null: false
+    t.string   "display_name",                           null: false
     t.string   "facebook_token"
     t.string   "facebook_refresh_token"
+    t.boolean  "is_admin",               default: false, null: false
   end
 
-  create_table "venues", force: :cascade do |t|
-    t.integer "locale_id"
-    t.string  "name"
-    t.string  "display_name"
-    t.string  "google_pace_id"
-    t.string  "facebook_place_id"
+  create_table "venues", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "name",              null: false
+    t.string   "display_name",      null: false
+    t.string   "google_pace_id"
+    t.string   "facebook_place_id"
+    t.uuid     "locale_id"
+    t.index ["locale_id"], name: "index_venues_on_locale_id", using: :btree
   end
 
+  add_foreign_key "events", "venues"
+  add_foreign_key "venues", "locales"
 end

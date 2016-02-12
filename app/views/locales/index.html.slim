@@ -12,14 +12,12 @@
     table.table
       thead
         tr
-          th Id
           th Name
           th Display Name
       tbody
         - if @locales.any?
           - @locales.each do |locale|
             tr
-              td= link_to locale.id, locale
               td= link_to locale.name, locale
               td= link_to locale.display_name, locale
         - else

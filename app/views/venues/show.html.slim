@@ -18,13 +18,11 @@
     table.table
       thead
         tr
-          th Id
           th Display Name
       tbody
         - if @venue.events.any?
           - @venue.events.each do |event|
             tr
-              td= link_to event.id, event
               td= link_to event.display_name, event
         - else
           tr

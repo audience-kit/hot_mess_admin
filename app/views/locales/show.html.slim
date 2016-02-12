@@ -22,14 +22,12 @@
     table.table
       thead
         tr
-          th Id
           th Name
 
       tbody
         - if @locale.venues.any?
           - @locale.venues.each do |venue|
             tr
-              td= link_to venue.id, venue
               td= link_to venue.name, venue
         - else
           tr

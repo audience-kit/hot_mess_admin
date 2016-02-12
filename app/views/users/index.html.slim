@@ -13,13 +13,11 @@
     table.table
       thead
         tr
-          th Id
           th Display Name
       tbody
         - if @users.any?
           - @users.each do |user|
             tr
-              td= link_to user.id, user
               td= link_to locale.display_name, user
         - else
           tr
