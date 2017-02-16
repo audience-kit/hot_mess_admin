@@ -1,4 +1,4 @@
-- title "Venue: #{@venue.display_name}"
+- title "Venue: #{@venue.name}"
 
 .panel.panel-default
   .panel-heading
@@ -23,7 +23,7 @@
         - if @venue.events.any?
           - @venue.events.each do |event|
             tr
-              td= link_to event.display_name, event
+              td= link_to event.name, event
         - else
           tr
             td colspan="2" No Events

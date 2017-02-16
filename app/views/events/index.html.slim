@@ -14,13 +14,11 @@
       thead
         tr
           th Name
-          th Display Name
       tbody
         - if @events.any?
           - @events.each do |event|
             tr
               td= link_to event.name, event
-              td= link_to event.display_name, event
         - else
           tr colspan="3"
             td No events

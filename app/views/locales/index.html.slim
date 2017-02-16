@@ -13,13 +13,11 @@
       thead
         tr
           th Name
-          th Display Name
       tbody
         - if @locales.any?
           - @locales.each do |locale|
             tr
               td= link_to locale.name, locale
-              td= link_to locale.display_name, locale
         - else
           tr
             td colspan="3" No Locales

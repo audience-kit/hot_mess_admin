@@ -9,13 +9,11 @@
       thead
         tr
           th Name
-          th Display Name
       tbody
         - if @venues.any?
           - @venues.each do |venue|
             tr
               td= link_to venue.name, venue
-              td= link_to venue.display_name, venue
         - else
           tr
             td colspan="2" No Venues

@@ -1,14 +1,12 @@
-ruby '2.3.0'
+ruby '2.3.3'
 
 source 'https://rubygems.org'
 
-gem 'rails', '>= 5.0.0.beta2'                 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails'                                   # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 ### Data Storage and Model Layer Concerns
-gem 'pg'                                      # Use postgresql as the database for Active Record
-gem 'bcrypt'                                  # Cryptography primitives
-gem 'redis'                                   # Action Cable dependencies for the Redis adapter
-gem 'mongoid'                                 # Use Mongoid for non-relational data storage
+gem 'activeresource'
+gem 'typhoeus'
 
 ### View layer concerns
 gem 'bower-rails'
@@ -18,14 +16,9 @@ gem 'coffee-rails'                            # Use CoffeeScript for .coffee ass
 gem 'slim-rails'                              # Use slim-lang.org for view templates
 gem 'jquery-rails'                            # Use jquery as the JavaScript library
 gem 'turbolinks'                              # Turbolinks makes following links in your web application faster.
-gem 'jbuilder'                                # Build JSON APIs with ease.
 
 ### External API and data sources
 gem 'koala'
-gem 'geocoder'
-gem 'yelp'
-gem 'typhoeus'
-gem 'google-api-client'
 
 ### Hosting server and other runtime components
 gem 'puma'                                    # Use Puma as the app server
