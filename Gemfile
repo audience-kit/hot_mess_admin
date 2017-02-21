@@ -5,7 +5,6 @@ source 'https://rubygems.org'
 gem 'rails'                                   # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 ### Data Storage and Model Layer Concerns
-gem 'activeresource'
 gem 'typhoeus'
 
 ### View layer concerns

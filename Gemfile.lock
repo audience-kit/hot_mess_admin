@@ -42,7 +42,6 @@ GEM
       public_suffix (~> 2.0, >= 2.0.2)
     arel (7.1.4)
     bower-rails (0.11.0)
-    bson (4.2.1)
     builder (3.2.3)
     byebug (9.0.6)
     capybara (2.12.0)
@@ -91,73 +90,36 @@ GEM
       railties (>= 3.0.0)
     faraday (0.11.0)
       multipart-post (>= 1.2, < 3)
-    faraday_middleware (0.11.0.1)
-      faraday (>= 0.7.4, < 1.0)
     ffi (1.9.17)
-    geocoder (1.4.3)
     gherkin (4.0.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    google-api-client (0.9.28)
-      addressable (~> 2.3)
-      googleauth (~> 0.5)
-      httpclient (~> 2.7)
-      hurley (~> 0.1)
-      memoist (~> 0.11)
-      mime-types (>= 1.6)
-      representable (~> 2.3.0)
-      retriable (~> 2.0)
-    googleauth (0.5.1)
-      faraday (~> 0.9)
-      jwt (~> 1.4)
-      logging (~> 2.0)
-      memoist (~> 0.12)
-      multi_json (~> 1.11)
-      os (~> 0.9)
-      signet (~> 0.7)
-    httpclient (2.8.3)
-    hurley (0.2)
     i18n (0.8.0)
-    jbuilder (2.6.1)
-      activesupport (>= 3.0.0, < 5.1)
-      multi_json (~> 1.2)
     jquery-rails (4.2.2)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.6)
-    jwt (1.5.6)
     koala (2.4.0)
       addressable
       faraday
       multi_json (>= 1.3.0)
-    little-plugger (1.1.4)
-    logging (2.1.0)
-      little-plugger (~> 1.1)
-      multi_json (~> 1.10)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    memoist (0.15.0)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
-    mongo (2.4.1)
-      bson (>= 4.2.1, < 5.0.0)
-    mongoid (6.1.0)
-      activemodel (~> 5.0)
-      mongo (>= 2.4.1, < 3.0.0)
     multi_json (1.12.1)
     multi_test (0.1.2)
     multipart-post (2.0.0)
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
-    os (0.9.6)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -199,10 +161,6 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (12.0.0)
     rdoc (4.3.0)
-    redis (3.3.3)
-    representable (2.3.0)
-      uber (~> 0.0.7)
-    retriable (2.1.0)
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -232,12 +190,6 @@ GEM
       rdoc (~> 4.0)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
-    signet (0.7.3)
-      addressable (~> 2.3)
-      faraday (~> 0.9)
-      jwt (~> 1.5)
-      multi_json (~> 1.10)
-    simple_oauth (0.3.1)
     slim (3.0.7)
       temple (~> 0.7.6)
       tilt (>= 1.3.3, < 2.1)
@@ -268,7 +220,6 @@ GEM
       ethon (>= 0.9.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uber (0.0.15)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
     web-console (3.4.0)
@@ -281,10 +232,6 @@ GEM
     websocket-extensions (0.1.2)
     xpath (2.0.0)
       nokogiri (~> 1.3)
-    yelp (2.1.4)
-      faraday (~> 0.8, >= 0.8.0)
-      faraday_middleware (~> 0.8, >= 0.8.0)
-      simple_oauth (~> 0.3.1)
 
 PLATFORMS
   ruby
@@ -296,17 +243,12 @@ DEPENDENCIES
   coffee-rails
   cucumber-rails
   factory_girl_rails
-  geocoder
-  google-api-client
-  jbuilder
   jquery-rails
   koala
-  mongoid
   pry-rails
   puma
   rails
   rails_12factor
-  redis
   rspec-rails
   sass-rails
   sdoc
@@ -318,10 +260,9 @@ DEPENDENCIES
   typhoeus
   uglifier
   web-console
-  yelp
 
 RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.13.7
+   1.14.4
