@@ -1,0 +1,15 @@
+{
+  "name": "hot_mess_admin",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
