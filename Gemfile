@@ -18,6 +18,7 @@ gem 'turbolinks'                              # Turbolinks makes following links
 
 ### External API and data sources
 gem 'koala'
+gem 'jwt'
 
 ### Hosting server and other runtime components
 gem 'puma'                                    # Use Puma as the app server
