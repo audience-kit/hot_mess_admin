@@ -14,11 +14,15 @@
       thead
         tr
           th Display Name
+          th Email
+          th Has Token
       tbody
         - if @users.any?
           - @users.each do |user|
             tr
               td= link_to user.name, user
+              td= user.email_address
+              td= user.facebook_token != nil
         - else
           tr
             td colspan="2" No Users

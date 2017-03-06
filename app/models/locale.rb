@@ -1,4 +1,11 @@
 class Locale < ApplicationRecord
-  validates_presence_of :name
-  validates_presence_of :display_name
+  include Concerns::HasLocation
+
+  has_many :venues
+  has_many :people
+  has_many :events, through: :venues
+
+  def update_data
+
+  end
 end

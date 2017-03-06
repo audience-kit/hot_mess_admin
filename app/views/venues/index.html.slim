@@ -9,11 +9,15 @@
       thead
         tr
           th Name
+          th Event Count
+          th Hidden
       tbody
         - if @venues.any?
           - @venues.each do |venue|
             tr
               td= link_to venue.name, venue
+              td= venue.events.count
+              td= venue.locale ? venue.locale.name : 'no locale'
         - else
           tr
             td colspan="2" No Venues

@@ -1,3 +1,3 @@
-class ApplicationRecord
-  include ActiveModel::Model
+class ApplicationRecord < ActiveRecord::Base
+  self.abstract_class = true
 end

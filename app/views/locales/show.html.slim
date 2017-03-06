@@ -8,7 +8,7 @@
         i.fa.fa-plus
         | Edit
   .panel-body
-
+    .code= @locale.google_location
 
 .panel.panel-default
   .panel-heading
@@ -23,12 +23,15 @@
       thead
         tr
           th Name
-
+          th Event Count
+          th Tags
       tbody
         - if @locale.venues.any?
           - @locale.venues.each do |venue|
             tr
               td= link_to venue.name, venue
+              td= venue.events.count
+              td= venue_tags venue
         - else
           tr
             td colspan="2" No Venues
