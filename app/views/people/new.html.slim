@@ -1,0 +1,11 @@
+= form_for @person do |f|
+  .panel
+    .panel-heading New Person
+    .panel-body
+      .fancy-form
+        = f.label :facebook_id
+        = f.text_field :facebook_id, class: 'form-control'
+    .panel-footer
+      .pull-right
+        = f.submit 'Save', class: ['btn', 'btn-primary']
+      .clearfix

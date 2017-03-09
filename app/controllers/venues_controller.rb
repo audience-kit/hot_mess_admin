@@ -1,6 +1,6 @@
 class VenuesController < ApplicationController
   def index
-    @venues = Venue.all
+    @venues = HotMessModels::Venue.all
 
     respond_to do |format|
       format.html
@@ -9,7 +9,7 @@ class VenuesController < ApplicationController
   end
 
   def show
-    @venue = Venue.find(params[:id])
+    @venue = HotMessModels::Venue.find(params[:id])
 
     respond_to do |format|
       format.html
@@ -18,9 +18,9 @@ class VenuesController < ApplicationController
   end
 
   def new
-    @locale = Locale.find(params[:locale_id])
+    @locale = HotMessModels::Locale.find(params[:locale_id])
 
-    @venue = Venue.new locale_id: @locale.id
+    @venue = CreateVenue.new locale_id: @locale.id
 
     respond_to do |format|
       format.html
@@ -29,7 +29,9 @@ class VenuesController < ApplicationController
   end
 
   def create
-    @venue = Venue.new venue_params
+    venue = CreateVenue.new venue_params
+
+    @venue = venue.to_model
 
     if @venue.save
       respond_to do |format|
@@ -45,13 +47,13 @@ class VenuesController < ApplicationController
   end
 
   def edit
-    @venue = Venue.find(params[:id])
+    @venue = HotMessModels::Venue.find(params[:id])
   end
 
   def update
-    @venue = Venue.find(params[:id])
+    @venue = HotMessModels::Venue.find(params[:id])
 
-    @venue.update venue_params
+    @venue.update venue_params.nilify_blanks
 
     if @venue.save
       respond_to do |format|
@@ -67,7 +69,7 @@ class VenuesController < ApplicationController
   end
 
   def delete
-    @venue = Venue.find(params[:id])
+    @venue = HotMessModels::Venue.find(params[:id])
 
     @venue.delete
 
@@ -79,6 +81,6 @@ class VenuesController < ApplicationController
 
   private
   def venue_params
-    params.require(:venue).permit(:locale_id, :name, :display_name)
+    params.require(:venue).permit(:locale_id, :name, :display_name, :facebook_id, :google_place_id, :name_override, :hidden)
   end
 end

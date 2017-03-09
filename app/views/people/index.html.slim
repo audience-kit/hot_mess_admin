@@ -1,0 +1,21 @@
+.panel.panel-default
+  .panel-heading
+    strong People
+    ul.options.pull-right.list-unstyled.relative
+      li
+        a.btn.btn-xs.white.btn-primary href=new_person_path
+          i.fa.fa-plus
+          | New
+  .panel-body
+    table.table
+      thead
+        tr
+          th Name
+          th Locale
+          th Actions
+      tbody
+        - @people.each do |person|
+          tr
+            td= link_to person.display_name, person
+            td= person.locale ? person.locale.name : 'global'
+            td= link_to 'edit', edit_person_path(person)

@@ -2,7 +2,7 @@
 
 .panel.panel-default
   .panel-heading
-    strong Venues
+    strong Locales
     ul.options.pull-right.list-unstyled.relative
       li
         a.btn.btn-xs.white.btn-primary href=new_locale_path
@@ -13,11 +13,13 @@
       thead
         tr
           th Name
+          th Venue Count
       tbody
         - if @locales.any?
           - @locales.each do |locale|
             tr
               td= link_to locale.name, locale
+              td= locale.venues.count
         - else
           tr
             td colspan="3" No Locales

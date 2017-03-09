@@ -8,8 +8,11 @@
     .panel-body
       .fancy-form
         = f.hidden_field :locale_id
-        = f.label :name
-        = f.text_field :name, class: 'form-control'
+        = f.label :facebook_id
+        = f.text_field :facebook_id, class: 'form-control'
+        br
+        = f.label :google_place_id
+        = f.text_field :google_place_id, class: 'form-control'
 
     .panel-footer
       .pull-right

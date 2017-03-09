@@ -1,0 +1,26 @@
+= form_for @person do |f|
+  .panel
+    .panel-heading Edit #{@person.display_name}
+    .panel-body
+      .fancy-form
+        = "Name: #{@person.name}"
+        br
+        = f.label :name_override
+        = f.text_field :name_override, class: 'form-control'
+        br
+        = f.label :sound_cloud
+        = f.text_field :sound_cloud, class: 'form-control'
+        br
+        = f.label :instagram
+        = f.text_field :instagram, class: 'form-control'
+        br
+        = f.label :twitter
+        = f.text_field :twitter, class: 'form-control'
+        br
+        = f.label :order
+        = f.text_field :order, class: 'form-control'
+        br
+        = f.label :locale_id
+        = f.select :locale_id, HotMessModels::Locale.all.collect { |l| [ l.name, l.id ] }, class: 'form-control', include_blank: 'Global Locale'
+        br
+        = f.submit

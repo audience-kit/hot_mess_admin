@@ -1,0 +1,23 @@
+= form_for @venue do |f|
+  .panel
+    .panel-heading Edit #{@venue.display_name}
+    .panel-body
+      .fancy-form
+        = "Name: #{@venue.name}"
+        br
+        = f.label :name_override
+        = f.text_field :name_override, class: 'form-control'
+        br
+        = f.label :facebook_id
+        = f.text_field :facebook_id, class: 'form-control'
+        br
+        = f.label :google_place_id
+        = f.text_field :google_place_id, class: 'form-control'
+        br
+        = f.label :order
+        = f.text_field :order, class: 'form-control'
+        br
+        = f.label :locale_id
+        = f.select :locale_id, HotMessModels::Locale.all.collect { |l| [ l.name, l.id ] }, class: 'form-control', include_blank: 'Global Locale'
+        br
+        = f.submit

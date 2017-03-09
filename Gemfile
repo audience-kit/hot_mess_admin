@@ -21,6 +21,8 @@ gem 'koala'
 gem 'jwt'
 gem 'activerecord-postgis-adapter'
 gem 'pg'
+gem 'hot_mess_models', path: '~/Developer/hot_mess_models'
+gem 'google_places'
 
 ### Hosting server and other runtime components
 gem 'puma'                                    # Use Puma as the app server

@@ -1,7 +1,7 @@
 class LocalesController < ApplicationController
 
   def index
-    @locales = Locale.all
+    @locales = HotMessModels::Locale.all
 
     respond_to do |format|
       format.html
@@ -10,7 +10,7 @@ class LocalesController < ApplicationController
   end
 
   def show
-    @locale = Locale.find(params[:id])
+    @locale = HotMessModels::Locale.find(params[:id])
 
     respond_to do |format|
       format.html
@@ -19,7 +19,7 @@ class LocalesController < ApplicationController
   end
 
   def new
-    @locale = Locale.new
+    @locale = HotMessModels::Locale.new
 
     respond_to do |format|
       format.html
@@ -28,7 +28,7 @@ class LocalesController < ApplicationController
   end
 
   def create
-    @locale = Locale.new locale_params
+    @locale = HotMessModels::Locale.new locale_params
 
     if @locale.save
       respond_to do |format|
@@ -42,7 +42,7 @@ class LocalesController < ApplicationController
   end
 
   def edit
-    @locale = Locale.find params[:id]
+    @locale = HotMessModels::Locale.find params[:id]
 
     respond_to do |format|
       format.html
@@ -51,7 +51,7 @@ class LocalesController < ApplicationController
   end
 
   def update
-    @locale = Locale.find params[:id]
+    @locale = HotMessModels::Locale.find params[:id]
 
     @locale.update locale_params
 
@@ -69,7 +69,7 @@ class LocalesController < ApplicationController
   end
 
   def destroy
-    @locale = Locale.find(params[:id])
+    @locale = HotMessModels::Locale.find(params[:id])
 
     @locale.destroy
 

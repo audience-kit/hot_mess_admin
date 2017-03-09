@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    @events = HotMessModels::Event.future
 
     respond_to do |format|
       format.html
@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find params[:id]
+    @event = HotMessModels::Event.find params[:id]
 
     respond_to do |format|
       format.html
@@ -18,9 +18,9 @@ class EventsController < ApplicationController
   end
 
   def new
-    @venue = Venue.find(params[:venue_id])
+    @venue = HotMessModels::Venue.find(params[:venue_id])
 
-    @event = Event.new venue_id: @venue.id
+    @event = HotMessModels::Event.new venue_id: @venue.id
 
     respond_to do |format|
       format.html
@@ -29,7 +29,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new event_params
+    @event = HotMessModels::Event.new event_params
 
     if @event.save
       respond_to do |format|
@@ -40,7 +40,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find params[:id]
+    @event = HotMessModels::Event.find params[:id]
 
     respond_to do |format|
       format.html
@@ -49,7 +49,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find params[:id]
+    @event = HotMessModels::Event.find params[:id]
 
     @event.update event_params
 
@@ -67,7 +67,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find params[:id]
+    @event = HotMessModels::Event.find params[:id]
 
     @event.destroy
 

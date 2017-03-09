@@ -14,11 +14,13 @@
       thead
         tr
           th Name
+          th Venue
       tbody
         - if @events.any?
           - @events.each do |event|
             tr
               td= link_to event.name, event
+              td= event.venue ? event.venue.name : raw('<strong>no venue</strong>')
         - else
           tr colspan="3"
             td No events

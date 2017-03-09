@@ -1,0 +1,15 @@
+
+
+.panel
+  .panel-heading Events
+  .panel-body
+    table.table
+      thead
+        tr
+          th Name
+          th Venue
+      tbody
+        - @person.events.each do |event|
+          tr
+            td= event.name
+            td= event.venue.name
