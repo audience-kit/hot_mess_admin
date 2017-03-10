@@ -25,6 +25,7 @@
           th Name
           th Event Count
           th Tags
+          th Actions
       tbody
         - if @locale.venues.any?
           - @locale.venues.each do |venue|
@@ -32,6 +33,7 @@
               td= link_to venue.name, venue
               td= venue.events.count
               td= venue_tags venue
+              td= link_to 'edit', edit_venue_path(venue)
         - else
           tr
             td colspan="2" No Venues

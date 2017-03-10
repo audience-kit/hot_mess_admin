@@ -32,8 +32,6 @@ class CreateVenue
       name = facebook_graph['name']
     end
 
-    raise 'invalid data' unless name
-
     venue = HotMessModels::Venue.new  name: name,
                                       locale_id: self.locale_id,
                                       facebook_id: facebook_graph['id'],
