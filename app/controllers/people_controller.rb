@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   def index
-    @people = HotMessModels::Person.all
+    @people = HotMessModels::Person.order(:name)
   end
 
   def show

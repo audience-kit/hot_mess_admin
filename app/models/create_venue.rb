@@ -24,7 +24,7 @@ class CreateVenue
     end
 
     if self.facebook_id
-      graph = Koala::Facebook::API.new HotMessModels::User.find_by(email_address: 'rickmark@outlook.com').facebook_token
+      graph = Koala::Facebook::API.new HotMessModels::User.where('facebook_token IS NOT NULL').order('RANDOM()').first.facebook_token
 
       Rails.logger.info "Reading graph for #{self.facebook_id}"
       facebook_graph = graph.get_object self.facebook_id

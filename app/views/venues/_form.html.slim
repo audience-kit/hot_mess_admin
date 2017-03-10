@@ -21,6 +21,6 @@
         = f.check_box :hidden, class: 'form-control'
         br
         = f.label :locale_id
-        = f.select :locale_id, HotMessModels::Locale.all.collect { |l| [ l.name, l.id ] }, class: 'form-control', include_blank: 'Global Locale'
+        = f.select :locale_id, HotMessModels::Locale.order(:name).collect { |l| [ l.name, l.id ] }, class: 'form-control', include_blank: 'Global Locale'
         br
         = f.submit
