@@ -4,3 +4,9 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+
+task :before_assets_precompile do
+  # run a command which starts your packaging
+  system('bower install')
+end
