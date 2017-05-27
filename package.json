@@ -1,0 +1,18 @@
+{
+  "name": "hot_mess_admin",
+  "version": "1.0.0",
+  "description": "This is the Hot Mess web application and API server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://rickmark%40noncesoft.com@noncesoft.visualstudio.com/Hot%20Mess/_git/hot_mess_admin"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.8.0"
+  }
+}
