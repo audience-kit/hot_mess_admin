@@ -49,15 +49,6 @@ FacebookAuthentication =
   setup: ->
     $(document).ready () ->
 
-      window.fbAsyncInit = ->
-        FB.init({
-          appId      : $("meta[name='fb-app']").attr('content'),
-          autoLogAppEvents : true,
-          status           : true,
-          xfbml            : true,
-          version          : 'v2.9'
-        })
-
       $('.facebook_login').click () ->
         options = { scope: 'public_profile,email,user_friends,read_insights,manage_pages' }
         FacebookAuthentication.login(FacebookAuthentication.facebook_login_callback, options)
