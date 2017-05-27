@@ -1,0 +1,37 @@
+doctype 5
+html lang="en-US"
+  head
+    title Hot Mess Administration
+    meta charset="utf-8"
+    meta http-equiv="Content-type" content="text/html; charset=utf-8"
+    meta name="Author" content="Rick Mark"
+    meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"
+    meta name="fb-app-id" content=FACEBOOK_APP_ID
+
+    = csrf_meta_tags
+    = action_cable_meta_tag
+
+    /! WEB FONTS
+    link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css"
+
+    = stylesheet_link_tag    'application', media: 'all'
+    /!= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.secrets.google_api_key}&libraries=places"
+
+
+
+  body
+    = yield
+    = javascript_include_tag 'facebook/login'
+
+    javascript:
+        var facebook_app_id = $('meta[name="fb-app-id"]').attr('content');
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: facebook_app_id,
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v2.9'
+            });
+            FB.AppEvents.logPageView();
+        };
+    = javascript_include_tag '//connect.facebook.net/en_US/sdk.js'

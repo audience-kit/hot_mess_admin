@@ -6,7 +6,7 @@ html lang="en-US"
     meta charset="utf-8"
     meta http-equiv="Content-type" content="text/html; charset=utf-8"
     meta name="description" content=""
-    meta name="Author" content="Rick Mark [rickmark.me]"
+    meta name="Author" content="Rick Mark"
 
     = csrf_meta_tags
     = action_cable_meta_tag
@@ -37,7 +37,7 @@ html lang="en-US"
                 = image_tag 'noavatar.jpg', height: 34, class: 'user-avatar'
                 span.user-name
                   span.hidden-xs
-                    | Rick Mark
+                    = session[:user]['name']
                     i.fa.fa-angle-down
               ul.dropdown-menu.hold-on-click
 
