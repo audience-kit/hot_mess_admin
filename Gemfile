@@ -1,4 +1,4 @@
-ruby '2.3.3'
+ruby '2.4.1'
 
 source 'https://rubygems.org'
 
@@ -6,6 +6,8 @@ gem 'rails'                                   # Bundle edge Rails instead: gem '
 
 ### Data Storage and Model Layer Concerns
 gem 'typhoeus'
+gem 'faraday'
+gem 'faraday_middleware'
 
 ### View layer concerns
 gem 'bower-rails'
@@ -19,9 +21,6 @@ gem 'turbolinks'                              # Turbolinks makes following links
 ### External API and data sources
 gem 'koala'
 gem 'jwt'
-gem 'activerecord-postgis-adapter'
-gem 'pg'
-gem 'hot_mess_models', path: '~/Developer/hot_mess_models'
 gem 'google_places'
 
 ### Hosting server and other runtime components
@@ -40,6 +39,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'factory_girl_rails'
   gem 'pry-rails'
+  gem 'rubocop'
 end
 
 group :development do

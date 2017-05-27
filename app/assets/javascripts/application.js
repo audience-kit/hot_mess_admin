@@ -1,4 +1,4 @@
-
+//= require jquery
 
 	window.width = jQuery(window).width();
 
