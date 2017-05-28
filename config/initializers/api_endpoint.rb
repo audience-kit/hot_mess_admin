@@ -7,10 +7,3 @@ API_ENDPOINT, FACEBOOK_APP_ID = case Rails.env
     ['https://api.hotmess.social', 713525445368431]
                end
 
-API_CONNECTION = Faraday.new(:url => API_ENDPOINT) do |faraday|
-  faraday.request  :json             # form-encode POST params
-  faraday.response :json, :content_type => /\bjson$/
-  faraday.response :logger
-  faraday.use :instrumentation
-  faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
-end

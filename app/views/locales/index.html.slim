@@ -18,8 +18,7 @@
         - if @locales.any?
           - @locales.each do |locale|
             tr
-              td= link_to locale.name, locale
-              td= locale.venues.count
+              td= locale.name
         - else
           tr
             td colspan="3" No Locales

@@ -1,7 +1,7 @@
 class LocalesController < ApplicationController
 
   def index
-    @locales = HotMessModels::Locale.all
+    @locales = Locale.all(create_endpoint)
 
     respond_to do |format|
       format.html

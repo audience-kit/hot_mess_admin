@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
   def create
     token_parameters = { facebook_token: params.require(:facebook_token), device: { type: :admin, identifier: request.remote_ip } }
-    token = API_CONNECTION.post "/v1/token", token_parameters
+    token = create_endpoint.post "/v1/token", token_parameters
 
     if token.status == 200
       session[:api_token] = token.body['token']
