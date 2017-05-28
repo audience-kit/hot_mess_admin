@@ -1,6 +1,6 @@
 class VenuesController < ApplicationController
   def index
-    @venues = HotMessModels::Venue.all
+    @venues = Venue.all(create_endpoint)
 
     respond_to do |format|
       format.html
@@ -18,9 +18,9 @@ class VenuesController < ApplicationController
   end
 
   def new
-    @locale = HotMessModels::Locale.find(params[:locale_id])
+    @locale = Locale.find(params[:locale_id], create_endpoint)
 
-    @venue = CreateVenue.new locale_id: @locale.id
+    @venue = Venue.new locale_id: @locale.id
 
     respond_to do |format|
       format.html

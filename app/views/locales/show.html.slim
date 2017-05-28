@@ -8,7 +8,7 @@
         i.fa.fa-plus
         | Edit
   .panel-body
-    .code= @locale.google_location
+    /.code= @locale.google_location
 
 .panel.panel-default
   .panel-heading
@@ -30,8 +30,8 @@
         - if @locale.venues.any?
           - @locale.venues.each do |venue|
             tr
-              td= link_to venue.name, venue
-              td= venue.events.count
+              td= link_to venue.display_name, venue
+              td= venue.event_count
               td= venue_tags venue
               td= link_to 'edit', edit_venue_path(venue)
         - else

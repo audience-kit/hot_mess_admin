@@ -10,7 +10,7 @@ class LocalesController < ApplicationController
   end
 
   def show
-    @locale = HotMessModels::Locale.find(params[:id])
+    @locale = Locale.find(params[:id], create_endpoint)
 
     respond_to do |format|
       format.html
