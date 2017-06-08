@@ -1,11 +1,11 @@
-= form_for @person do |f|
+= form_tag people_path do
   .panel
     .panel-heading New Person
     .panel-body
       .fancy-form
-        = f.label :facebook_id
-        = f.text_field :facebook_id, class: 'form-control'
+        = label_tag :facebook_id
+        = text_field_tag :facebook_id, '', class: 'form-control'
     .panel-footer
       .pull-right
-        = f.submit 'Save', class: ['btn', 'btn-primary']
+        = submit_tag 'Save', class: ['btn', 'btn-primary']
       .clearfix

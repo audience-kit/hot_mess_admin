@@ -12,23 +12,11 @@ class PeopleController < ApplicationController
   end
 
   def create
-    @person = CreatePerson.new
-    @person.facebook_id = params[:person][:facebook_id]
-
-    return render :new unless @person.valid?
-
-    person_model = @person.to_model
-
-    if person_model.valid?
-      person_model.save
-
-      return redirect_to person_model
-    end
-
-    render :new
+    create_endpoint.post('/v1/admin/people', facebook_id: params[:facebook_id])
   end
 
   def edit
+
     @person = HotMessModels::Person.find params[:id]
   end
 
