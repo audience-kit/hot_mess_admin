@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :events
     collection do
       get :missing_google
+      post :missing_google, action: :missing_google_fill
     end
   end
 

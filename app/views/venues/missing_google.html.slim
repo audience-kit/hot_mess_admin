@@ -16,7 +16,7 @@
           - if @venues.any?
             - @venues.each do |venue|
               tr
-                td= link_to venue.name, venue
+                td= link_to "#{venue.name} - #{(venue.locale || {})[:name]}", venue
                 td= link_to venue.facebook_id, "https://facebook.com/#{venue.facebook_id}"
                 td= text_field_tag venue.id
           - else

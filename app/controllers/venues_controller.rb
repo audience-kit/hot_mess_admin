@@ -18,7 +18,7 @@ class VenuesController < ApplicationController
   end
 
   def new
-    @locale = Locale.find(params[:locale_id], create_endpoint)
+    @locale = Locale.find(create_endpoint, params[:locale_id])
 
     @venue = Venue.new locale_id: @locale.id
 
@@ -81,6 +81,12 @@ class VenuesController < ApplicationController
 
   def missing_google
     @venues = Venue.missing_google create_endpoint
+  end
+
+  def missing_google_fill
+    logger.debug params.inspect
+
+    redirect_to action: :missing_google
   end
 
   private

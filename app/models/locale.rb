@@ -23,6 +23,6 @@ class Locale < ApplicationModel
   end
 
   def venues
-    @venues ||= Venue.all(self.id, self.connection)
+    @venues ||= Venue.all(self.connection, self.id)
   end
 end
