@@ -79,6 +79,10 @@ class VenuesController < ApplicationController
     end
   end
 
+  def missing_google
+    @venues = Venue.missing_google create_endpoint
+  end
+
   private
   def venue_params
     params.require(:venue).permit(:locale_id, :name, :display_name, :facebook_id, :google_place_id, :name_override, :hidden)

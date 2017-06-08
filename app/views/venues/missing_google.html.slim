@@ -1,0 +1,27 @@
+- title 'Missing Google Place ID'
+
+.panel.panel-default
+  .panel-heading
+    strong Venues
+
+  .panel-body.nopadding
+    = form_tag
+      table.table
+        thead
+          tr
+            th Name
+            th Facebook Id
+            th Google Place Id
+        tbody
+          - if @venues.any?
+            - @venues.each do |venue|
+              tr
+                td= link_to venue.name, venue
+                td= link_to venue.facebook_id, "https://facebook.com/#{venue.facebook_id}"
+                td= text_field_tag venue.id
+          - else
+            tr
+              td colspan="3" No Venues
+
+
+      = submit_tag

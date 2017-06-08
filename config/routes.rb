@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   resources :venues do
     resources :events
+    collection do
+      get :missing_google
+    end
   end
 
   resources :events
