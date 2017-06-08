@@ -31,7 +31,7 @@ class VenuesController < ApplicationController
   def create
     venue = CreateVenue.new venue_params
 
-    @venue = venue.to_model
+    @venue = Venue.create(create_endpoint, venue.locale_id, venue.facebook_id, venue.google_place_id)
 
     if @venue.save
       respond_to do |format|

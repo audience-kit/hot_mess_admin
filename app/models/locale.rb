@@ -1,5 +1,5 @@
 class Locale < ApplicationModel
-  attr_accessor :name, :label, :created_at, :updated_at, :beacon_major, :envelope, :location_id, :timezone_zulu_delta, :connection
+  attr_accessor :name, :label, :created_at, :updated_at, :beacon_major, :envelope, :city_names, :event_count, :location_id, :timezone_zulu_delta, :connection, :venue_count, :hidden_venue_count
 
   def self.all(connection)
     locales = connection.get('/v1/admin/locales')

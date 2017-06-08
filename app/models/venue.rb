@@ -13,6 +13,16 @@ class Venue < ApplicationModel
     end
   end
 
+  def self.create(connection, locale_id, facebook_id, google_place_id)
+    connection.post("/v1/admin/locales/#{locale_id}/venues", { facebook_id: facebook_id, google_place_id: google_place_id}).body.map do |item|
+      puts "Create Venue => #{item}"
+      venue = Venue.new item
+      venue.connection = connection
+
+      venue
+    end
+  end
+
   def events
     []
   end

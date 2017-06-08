@@ -1,10 +1,10 @@
 class PeopleController < ApplicationController
   def index
-    @people = HotMessModels::Person.order(:name)
+    @people = Person.all create_endpoint
   end
 
   def show
-    @person = HotMessModels::Person.find params[:id]
+    @person = Person.find create_endpoint, params[:id]
   end
 
   def new

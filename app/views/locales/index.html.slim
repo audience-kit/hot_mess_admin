@@ -13,12 +13,19 @@
       thead
         tr
           th Name
-          th Venue Count
+          th Event Count
+          th Visible Venue Count
+          th Hidden Venue Count
+          th Total Venue Count
       tbody
         - if @locales.any?
           - @locales.each do |locale|
             tr
               td= link_to locale.name, locale
+              td= locale.event_count
+              td= locale.venue_count
+              td= locale.hidden_venue_count
+              td= locale.venue_count + locale.hidden_venue_count
         - else
           tr
             td colspan="3" No Locales

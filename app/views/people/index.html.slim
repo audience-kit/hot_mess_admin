@@ -16,6 +16,6 @@
       tbody
         - @people.each do |person|
           tr
-            td= link_to person.display_name, person
+            td= link_to person.name, person
             td= person.locale ? person.locale.name : 'global'
             td= link_to 'edit', edit_person_path(person)
