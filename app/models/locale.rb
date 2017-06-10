@@ -12,7 +12,7 @@ class Locale < ApplicationModel
     end
   end
 
-  def self.find(id, connection)
+  def self.find(connection, id)
     locale = connection.get("/v1/admin/locales/#{id}")
 
     puts locale.body
