@@ -10,7 +10,7 @@ class LocalesController < ApplicationController
   end
 
   def show
-    @locale = Locale.find(params[:id], create_endpoint)
+    @locale = Locale.find(create_endpoint, params[:id])
 
     respond_to do |format|
       format.html
